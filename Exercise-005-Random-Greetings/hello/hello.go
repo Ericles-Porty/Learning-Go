@@ -5,17 +5,20 @@ import (
 	"log"
 
 	"example.com/greetings"
+
 )
 
 func main() {
 	log.SetPrefix("Greetings: ")
 	log.SetFlags(0)
 
-	message, err := greetings.Hello("Eris")
+	names := []string{"Eris", "Safi", "Kev", "Juju"}
+
+	messages, err := greetings.Hellos(names)
 
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	fmt.Println(message)
+	fmt.Println(messages)
 }
